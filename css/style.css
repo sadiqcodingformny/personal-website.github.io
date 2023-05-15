@@ -1,0 +1,338 @@
+
+
+
+
+/* #be3144 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+    --secondary-gray: #252839;
+    --secondary-purple: #383d52;
+    --main-font: "Poppins", sans-serif;
+    --main-line-height: 1.4;
+    --color-shadow: #181719;
+    --main-text-color: #ffffff;
+    --main-subtitle-color: rgb(255, 255, 255);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--secondary-gray);
+    overflow-x: hidden;
+}
+
+
+/* Navigation Styles */
+
+/* #top {
+    position: fixed;
+    bottom: 10%;
+    right: 6%;
+    padding: 30px 20px;
+    z-index: 999;
+    background-color: rgb(255, 255, 255);
+    color: var(--main-blue);
+    border-radius: 3px solid var(--main-white);
+    border-radius: 5px;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    transition: transform 2s ease;
+} */
+
+#top:hover {
+    transition: all 2s ease;
+    transform: rotateY(70deg);
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: var(--main-gray);
+    display: flex;
+    justify-content: flex-end;
+    font-family: var(--main-font);
+    z-index: 999;
+}
+
+#navbar .nav-link {
+    padding: 25px 25px;
+    margin: 0 35px;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--main-white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-shadow: 2px 2px 2px #181719;
+}
+
+
+#header #navbar .nav-link:hover {
+    color: var(--);
+    text-shadow: none;
+    transition: color 0.6s ease;
+}
+
+
+/* Welcome Section Styles */
+
+
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(60deg, #252839, #272938);
+}
+
+.animated-title {
+    position: relative;
+    font-size: 14vw;
+    color: var(--secondary-gray);
+    -webkit-text-stroke: 0.3vw var(--secondary-purple);
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    pointer-events: none;
+    height: 370px;
+}
+
+.animated-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--main-text-color);
+    -webkit-text-stroke: 0vw var(--secondary-purple);
+    border-right: 2px solid var(--main-text-color);
+    border-top-width: 2px;
+    overflow: hidden;
+    animation: animatetitle 6s ease-in-out infinite;
+    transition: all 2s ease;
+}
+
+@keyframes animatetitle {
+    0%, 10%, 100% {
+        width: 0;
+    }
+
+    70%, 90% {
+        width: 100%;
+     transition: all 2s ease;
+    }
+}
+
+.animated-subtitle {
+    font-size: 2vw;
+    color: var(--secondary-purple);
+    -webkit-text-stroke: 0.2vw var(--secondary-purple);
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 60%;
+    line-height: 5;
+    text-align: center;
+    pointer-events: none;
+    z-index: 9;
+}
+
+
+#welcome-section {
+    height: 100vh;
+    text-align: center;
+}
+
+/* About Section Styles */
+
+#about {
+    background-color: var(--main-blue);
+    min-height: 45vh;
+    padding: 11rem 4.5em 2em;
+    color: var(--main-white);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    height: auto;
+    overflow: hidden;
+}
+
+#about .title {
+    color: var(--main-text-color);
+    font-size: 3rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+}
+
+#about .title:last-of-type {
+    color: var(--main-text-color);
+    font-size: 3rem;
+    font-family: monospace;
+    font-weight: 900;
+    margin-top: 1.5em;
+}
+
+#about ul li {
+    list-style-type:circle;
+    margin-top: 1em;
+    color: goldenrod;
+}
+
+#about .subtitle {
+    color: var(--main-subtitle-color);
+    font-family: "Raleway", sans-serif;
+}
+
+#about hr {
+    margin-top: .9rem;
+}
+
+/* Work Section Styles */
+
+#work {
+    background-color: var(--color-shadow);
+    padding: 4.5em;
+    font-size: 1.5rem;
+}
+
+#work .title {
+    font-size: 3rem;
+    color: var(--main-text-color);
+    font-family: monospace;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.work-images-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    background-size: cover;
+}
+
+.work-images-container img {
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    filter: blur(1px);
+    transition: all 4s ease;
+}
+
+.work-images-container img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    box-shadow: 2px 4px 8px black;
+    max-height: 100%;
+    height: 100%;
+}
+
+/* Contact Section Styles */
+
+#contact p a {
+    display: none;
+}
+
+#contact {
+    padding: 4.5rem;
+}
+
+#contact .title {
+    font-size: 3.5rem;
+    color: var(--main-text-color);
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    padding: 2rem;
+    transition: all 0.12s ease;
+    text-align: center;
+}
+
+#contact .subtitle {
+    color: var(--main-white);
+    padding: 2.5rem;
+    font-family: "Raleway", sans-serif;
+    font-family: monospace;
+    font-size: 2.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
+#contact ul {
+    color: white;
+    padding: 3.5rem;
+    font-size: 2em;
+    font-family: monospace;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact ul li {
+    list-style-type: none;
+    font-family: "Raleway", sans-serif;
+    transition: all 0.6s ease-in-out;
+}
+
+#contact ul li a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    text-shadow: 2px 4px 4px var(--color-shadow);
+    transition: all 0.6s ease-in-out;
+}
+
+#contact ul li a:hover {
+    transition: all .9s ease-in-out;
+    text-shadow: none;
+    color: gainsboro;
+}
+
+#contact ul li a i {
+    margin-right: 20px;
+    color: var(--main-white);
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--main-gray);
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Anton", sans-serif;
+    padding: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+
+/* Responsive Styles */
+
+
+@media screen and (max-width:1390px) {
+    #welcome-section .hero .animated-title {
+        height: auto;
+        font-size: 12vw;
+    }
+    
+    #welcome-section .hero .animated-subtitle {
+        line-height: 0;
+        margin: 0;
+        top: 63%;
+    }
+}
+
